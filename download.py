@@ -100,6 +100,7 @@ to_download = {indexes[x] for x in FILENAMES}
 # Perform the main download
 subprocess.check_call((
     'aria2c',
+    '--seed-time=0',
     '--select-file={}'.format(','.join(sorted(to_download))),
     TORRENT,
 ))
